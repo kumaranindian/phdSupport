@@ -52,15 +52,17 @@ public class ExcelReader {
             System.out.println("\n\nIterating over Rows and Columns using for-each loop\n");
             for (Row row : sheet) {
                 movie = new Movie();
-                for (Cell cell : row) {
+                if(row.getRowNum()!=0){
+                     for (Cell cell : row) {
+                    
                     if (cell.getColumnIndex() == 0) {
 
-                        String movieId = dataFormatter.formatCellValue(cell);
-                        movie.setMovieId(movieId);
+                        String userId = dataFormatter.formatCellValue(cell);
+                        movie.setUserId(userId);
                   // System.out.print(cellValue + "\t");
                     } else if (cell.getColumnIndex() == 1) {
-                        String movieName = dataFormatter.formatCellValue(cell);
-                        movie.setMovieName(movieName);
+                        String movieId = dataFormatter.formatCellValue(cell);
+                        movie.setMovieId(movieId);
                     } else if (cell.getColumnIndex() == 2) {
                         int movieRating = (int) cell.getNumericCellValue();
                         movie.setMovieRating(movieRating);
@@ -68,6 +70,8 @@ public class ExcelReader {
                     
                     System.out.println();
                 }list.add(movie);
+                }
+               
             }
 
         } catch (InvalidFormatException ex) {

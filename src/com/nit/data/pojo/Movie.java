@@ -11,9 +11,18 @@ package com.nit.data.pojo;
  */
 public class Movie {
 
+    private String userId;
     private String movieId;
     private String movieName;
     private int movieRating;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     public String getMovieId() {
         return movieId;
