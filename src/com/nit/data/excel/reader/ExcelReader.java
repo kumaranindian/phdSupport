@@ -68,7 +68,7 @@ public class ExcelReader {
                         movie.setMovieRating(movieRating);
                     }
                     
-                    System.out.println();
+                  
                 }list.add(movie);
                 }
                
